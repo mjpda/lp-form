@@ -1,0 +1,133 @@
+/* ベースのスタイル設定 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #e8eaf6;
+    color: #333;
+}
+
+h2 {
+    font-size: 2em;
+    color: #0d47a1;
+}
+
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* フォームのコンテナ */
+.c-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.c-form__item {
+    margin-bottom: 30px;
+}
+
+.c-form__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.c-form__input, .c-form__select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #cfd8dc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.c-form__required {
+    color: #e53935;
+    background-color: #ffcdd2;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 0.75em;
+}
+
+.c-form__submit {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0d47a1; /* タイトルの色に合わせる */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0c3983; /* ホバー時は少し濃い色に */
+}
+
+.c-form__required {
+    color: #e53935;
+    background-color: #ffcdd2;
+    border-radius: 3px;
+    padding: 2px 6px;
+    margin-left: 15px; /* 必須マークの左の余白を追加 */
+    font-size: 0.75em;
+}
+
+
+/* メディアクエリ */
+@media (min-width: 768px) {
+    .c-form {
+        padding: 40px;
+    }
+    .sp {
+        display: none;
+    }  	
+}
+
+@media (min-width: 992px) {
+    h2 {
+        font-size: 2.5em;
+    }
+}
+
+/* ローディングアニメーション */
+#loading {
+    display: none; /* デフォルトでは非表示 */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+#loading:before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ddd;
+    border-top-color: #1565c0;
+    border-radius: 50%;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
